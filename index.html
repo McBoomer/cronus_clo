@@ -4,52 +4,132 @@
   <meta charset="UTF-8">
   <title>Opening Soon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="s_logo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    /* Reset and body styling */
     body {
-      background: #0f0f12;
-      color: #eaeaea;
-      font-family: 'Inter', sans-serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-    }
+  background: #fff;
+  color: #000;
+  font-family: Helvetica, Arial, sans-serif; /* changed from 'Inter' */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
     .container {
       text-align: center;
-      max-width: 480px;
+      max-width: 360px;
       width: 100%;
-      padding: 24px;
+      padding: 20px;
+      border: 1px solid #000;
+      border-radius: 8px;
+      box-sizing: border-box;
     }
-    h1 { font-size: 3rem; margin-bottom: 12px; }
-    p { color: #9a9a9a; margin-bottom: 32px; }
-    form { display: flex; gap: 10px; }
-    input { flex: 1; padding: 14px; border-radius: 6px; border: none; background: #1a1a1f; color: #eaeaea; font-size: 1rem; }
-    button { padding: 14px 22px; border-radius: 6px; border: none; background: #fff; color: #000; font-weight: 600; cursor: pointer; }
-    button:hover { opacity: 0.9; }
-    .success { display: none; margin-top: 18px; color: #9effc3; }
+
+    /* Logo styling */
+    .logo {
+      max-width: 150px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 1px;
+      filter: invert(0%); /* ensures black color if logo is SVG/PNG with transparency */
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    n {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+
+    p {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    input {
+      flex: 1 1 140px;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #000;
+      background: #f5f5f5;
+      color: #000;
+      font-size: 0.9rem;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px 18px;
+      border-radius: 6px;
+      border: none;
+      background: #000;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .success {
+      display: none;
+      margin-top: 12px;
+      color: green;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive text */
+    @media (max-width: 480px) {
+      h1 { font-size: 1.6rem; }
+      n { font-size: 0.85rem; }
+      p { font-size: 0.85rem; }
+      input { flex: 1 1 100%; }
+      button { flex: 1 1 100%; }
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>Opening Soon</h1>
-  <p>Be the first to know when we launch.</p>
-  
+  <img src="s_logo.png" alt="Logo" class="logo">
+  <h1>Coming Soon</h1>
+  <n>Sold out. Production scheduled for completion March.
+    Thank you for shopping with Cronus.</n>
+  <p>Be the first to know when we re-open.</p>
   <form id="signup-form">
     <input id="email" type="email" placeholder="Email address" required>
     <button type="submit">Notify Me</button>
   </form>
 
-  <div class="success" id="success">Thanks — you're on the list!</div>
+  <div class="success" id="success">success</div>
 </div>
 
 <script>
   const form = document.getElementById('signup-form');
   const success = document.getElementById('success');
 
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwC36JvGHkcQO8fFerkadO3w1tNXT0R58D654REjM5LXEKSaxFfGmbnFo5ehMiv-vy0WA/exec"; // replace with your Web App /exec URL
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwC36JvGHkcQO8fFerkadO3w1tNXT0R58D654REjM5LXEKSaxFfGmbnFo5ehMiv-vy0WA/exec";
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
