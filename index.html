@@ -9,17 +9,17 @@
   <style>
     /* Reset and body styling */
     body {
-  background: #fff;
-  color: #000;
-  font-family: Helvetica, Arial, sans-serif; /* changed from 'Inter' */
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0 16px;
-  box-sizing: border-box;
-}
+      background: #fff;
+      color: #000;
+      font-family: Helvetica, Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
 
     .container {
       text-align: center;
@@ -37,7 +37,7 @@
       width: 100%;
       height: auto;
       margin-bottom: 1px;
-      filter: invert(0%); /* ensures black color if logo is SVG/PNG with transparency */
+      filter: invert(0%);
     }
 
     h1 {
@@ -49,8 +49,8 @@
       color: #555;
       font-size: 0.9rem;
       margin-bottom: 20px;
+      display: block;
     }
-
 
     p {
       color: #555;
@@ -112,11 +112,14 @@
 <body>
 
 <div class="container">
-  <img src="s_logo.png" alt="Logo" class="logo">
+  <img src="logopage.png" alt="Logo" class="logo">
   <h1>Coming Soon</h1>
-  <n>Sold out. Production scheduled for completion March.
-    Thank you for shopping with Cronus.</n>
+  <n>
+    Sold out. Production scheduled for completion March.
+    Thank you for shopping with Cronus.
+  </n>
   <p>Be the first to know when we re-open.</p>
+
   <form id="signup-form">
     <input id="email" type="email" placeholder="Email address" required>
     <button type="submit">Notify Me</button>
@@ -144,7 +147,7 @@
     });
 
     form.reset();
-    success.style.display = 'block';
+    success.style.display = 'block;
   });
 </script>
 
